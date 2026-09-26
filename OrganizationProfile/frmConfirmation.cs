@@ -17,10 +17,17 @@ namespace OrganizationProfile
             InitializeComponent();
         }
 
-        private void frmConfirmation_Load(object sender, EventArgs e, StudentInformationClass studentInformationClass)
+        StudentInformationClass studentInfo = new StudentInformationClass();
+
+        private void frmConfirmation_Load(object sender, EventArgs e)
         {
-            lblStudentNo.Text = studentInformationClass.SetStudentNo.ToString();
-            lblName.Text 
+            lblStudentNo.Text = studentInfo.SetStudentNo.ToString();
+            lblName.Text = studentInfo.SetFullName.ToString();
+            lblProgram.Text = studentInfo.SetProgram.ToString();
+            lblBirthday.Text = studentInfo.SetBirthday.ToString();
+            lblGender.Text = studentInfo.SetGender.ToString();
+            lblContactNo.Text = studentInfo.SetContactNo.ToString();
+            lblAge.Text = studentInfo.SetAge.ToString();
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿namespace OrganizationProfile
+﻿
+namespace OrganizationProfile
 {
     partial class frmConfirmation
     {

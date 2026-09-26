@@ -9,7 +9,7 @@ namespace OrganizationProfile
     internal class StudentInformationClass
     {
         public int SetStudentNo = 0;
-        public int SetContactNo = 0;
+        public long SetContactNo = 0;
         public int SetAge = 0;
 
         public string SetProgram = " ";
