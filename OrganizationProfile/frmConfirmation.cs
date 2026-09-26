@@ -31,6 +31,7 @@ namespace OrganizationProfile
 
         private void btnSubmit_Click(object sender, EventArgs e)
         {
+            MessageBox.Show("Registration submitted!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
             this.DialogResult = DialogResult.OK;
             this.Close();
         }

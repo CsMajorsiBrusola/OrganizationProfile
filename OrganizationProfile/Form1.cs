@@ -31,7 +31,7 @@ namespace OrganizationProfile
         {
             if (Regex.IsMatch(LastName, @"^[a-zA-Z]+$") || Regex.IsMatch(FirstName, @"^[a-zA-Z]+$") || Regex.IsMatch(MiddleInitial, @"^[a-zA-Z]+$"))
             {
-                _FullName = LastName + ", " + FirstName + ", " + MiddleInitial;
+                _FullName = LastName + ", " + FirstName + ", " + MiddleInitial + ".";
             }
 
             return _FullName;
@@ -94,21 +94,49 @@ namespace OrganizationProfile
 
         private void button1_Click(object sender, EventArgs e)
         {
-            StudentInformationClass.SetStudentNo = Convert.ToInt32(txtStudentNo.Text);
-            StudentInformationClass.SetAge = Convert.ToInt32(txtAge.Text);
+            try {
+                StudentInformationClass.SetStudentNo = Convert.ToInt32(txtStudentNo.Text);
+                StudentInformationClass.SetAge = Convert.ToInt32(txtAge.Text);
 
-            StudentInformationClass.SetContactNo = txtContactNo.Text;
-            StudentInformationClass.SetProgram = cbPrograms.Text;
-            StudentInformationClass.SetGender = cbGender.Text;
-            StudentInformationClass.SetBirthday = DPBirthday.Text;
-            StudentInformationClass.SetFullName = FullName (txtLastName.Text, txtFirstName.Text, txtMiddleInitial.Text);
+                StudentInformationClass.SetContactNo = txtContactNo.Text;
+                StudentInformationClass.SetProgram = cbPrograms.Text;
+                StudentInformationClass.SetGender = cbGender.Text;
+                StudentInformationClass.SetBirthday = DPBirthday.Text;
+                StudentInformationClass.SetFullName = FullName(txtLastName.Text, txtFirstName.Text, txtMiddleInitial.Text);
 
-            frmConfirmation frm = new frmConfirmation();
-
-            using (frm = new frmConfirmation())
-                if (frm.ShowDialog() == DialogResult.OK) {
-                    ClearFormFields();
+                if (string.IsNullOrWhiteSpace(cbPrograms.Text) || string.IsNullOrWhiteSpace(cbGender.Text))
+                {
+                    throw new ArgumentNullException("Please select both Program and Gender.");
                 }
+
+                frmConfirmation frm = new frmConfirmation();
+
+                using (frm = new frmConfirmation())
+                    if (frm.ShowDialog() == DialogResult.OK)
+                    {
+                        ClearFormFields();
+                    }
+            }
+            catch (FormatException ex)
+            {
+                MessageBox.Show($"Format Error: {ex.Message}", "Invalid Input Format", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            catch (ArgumentNullException ex)
+            {
+                MessageBox.Show($"Missing Field: {ex.ParamName ?? ex.Message}", "Null Argument", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            catch (OverflowException ex)
+            {
+                MessageBox.Show($"Value Limit Exceeded: {ex.Message}", "Overflow Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            catch (IndexOutOfRangeException ex)
+            {
+                MessageBox.Show($"Out of Range: {ex.Message}", "Range Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            finally
+            {
+
+            }
         }
 
         public class StudentInformationClass {
