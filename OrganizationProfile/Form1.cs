@@ -1,3 +1,4 @@
+using System.Net;
 using System.Text.RegularExpressions;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
@@ -93,28 +94,51 @@ namespace OrganizationProfile
 
         private void button1_Click(object sender, EventArgs e)
         {
-            int StudentNo = Convert.ToInt32(txtStudentNo.Text);
-            long ContactNo = Convert.ToInt64(txtContactNo.Text);
-            int Age = Convert.ToInt32(txtAge.Text);
+            StudentInformationClass.SetStudentNo = Convert.ToInt32(txtStudentNo.Text);
+            StudentInformationClass.SetAge = Convert.ToInt32(txtAge.Text);
 
-            string Program = cbPrograms.Text;
-            string Gender = cbGender.Text;
-            string Birthday = DPBirthday.Text;
-            string Fname = txtFirstName.Text;
-            string Lname = txtLastName.Text;
-
-            StudentInformationClass studentInfo = new StudentInformationClass();
-
-            studentInfo.SetFullName = FullName(txtLastName.Text, txtFirstName.Text, txtMiddleInitial.Text);
-            studentInfo.SetStudentNo = StudentNo;
-            studentInfo.SetProgram = Program;
-            studentInfo.SetGender = Gender;
-            studentInfo.SetContactNo = ContactNo;
-            studentInfo.SetAge = Age;
-            studentInfo.SetBirthday = Birthday;
+            StudentInformationClass.SetContactNo = txtContactNo.Text;
+            StudentInformationClass.SetProgram = cbPrograms.Text;
+            StudentInformationClass.SetGender = cbGender.Text;
+            StudentInformationClass.SetBirthday = DPBirthday.Text;
+            StudentInformationClass.SetFullName = FullName (txtLastName.Text, txtFirstName.Text, txtMiddleInitial.Text);
 
             frmConfirmation frm = new frmConfirmation();
-            frm.ShowDialog();
+
+            using (frm = new frmConfirmation())
+                if (frm.ShowDialog() == DialogResult.OK) {
+                    ClearFormFields();
+                }
+        }
+
+        public class StudentInformationClass {
+            public static long SetStudentNo = 0;
+            public static int SetAge = 0;
+
+            public static string SetContactNo = string.Empty;
+            public static string SetProgram = string.Empty;
+            public static string SetGender = string.Empty;
+            public static string SetBirthday = string.Empty;
+            public static string SetFullName = string.Empty;
+
+            public static string getFullName() => SetFullName;
+            public static string getProgram() => SetProgram;
+            public static string getContactNo() => SetContactNo;
+            public static long getAge() => SetAge;
+            public static long getStudentNo() => SetStudentNo;
+        }
+
+        private void ClearFormFields()
+        {
+            txtStudentNo.Clear(); 
+            txtContactNo.Clear(); 
+            txtAge.Clear(); 
+            txtFirstName.Clear(); 
+            txtLastName.Clear(); 
+            txtMiddleInitial.Clear(); 
+            cbPrograms.SelectedIndex = -1; 
+            cbGender.SelectedIndex = -1; 
+            DPBirthday.Value = DateTime.Now;
         }
     }
 }

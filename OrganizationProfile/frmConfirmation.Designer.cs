@@ -50,9 +50,9 @@ namespace OrganizationProfile
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label2.Location = new Point(21, 41);
+            label2.Location = new Point(24, 55);
             label2.Name = "label2";
-            label2.Size = new Size(94, 21);
+            label2.Size = new Size(120, 28);
             label2.TabIndex = 2;
             label2.Text = "Student No.:";
             // 
@@ -60,9 +60,9 @@ namespace OrganizationProfile
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label3.Location = new Point(21, 84);
+            label3.Location = new Point(24, 112);
             label3.Name = "label3";
-            label3.Size = new Size(55, 21);
+            label3.Size = new Size(68, 28);
             label3.TabIndex = 3;
             label3.Text = "Name:";
             // 
@@ -70,9 +70,9 @@ namespace OrganizationProfile
             // 
             label6.AutoSize = true;
             label6.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label6.Location = new Point(21, 125);
+            label6.Location = new Point(24, 167);
             label6.Name = "label6";
-            label6.Size = new Size(74, 21);
+            label6.Size = new Size(92, 28);
             label6.TabIndex = 10;
             label6.Text = "Program:";
             // 
@@ -80,9 +80,9 @@ namespace OrganizationProfile
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label5.Location = new Point(21, 216);
+            label5.Location = new Point(24, 288);
             label5.Name = "label5";
-            label5.Size = new Size(71, 21);
+            label5.Size = new Size(89, 28);
             label5.TabIndex = 12;
             label5.Text = "Birthday:";
             // 
@@ -90,9 +90,9 @@ namespace OrganizationProfile
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label4.Location = new Point(21, 171);
+            label4.Location = new Point(24, 228);
             label4.Name = "label4";
-            label4.Size = new Size(40, 21);
+            label4.Size = new Size(51, 28);
             label4.TabIndex = 11;
             label4.Text = "Age:";
             // 
@@ -100,9 +100,9 @@ namespace OrganizationProfile
             // 
             label8.AutoSize = true;
             label8.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label8.Location = new Point(21, 262);
+            label8.Location = new Point(24, 349);
             label8.Name = "label8";
-            label8.Size = new Size(64, 21);
+            label8.Size = new Size(80, 28);
             label8.TabIndex = 13;
             label8.Text = "Gender:";
             // 
@@ -110,9 +110,9 @@ namespace OrganizationProfile
             // 
             label9.AutoSize = true;
             label9.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label9.Location = new Point(21, 312);
+            label9.Location = new Point(24, 416);
             label9.Name = "label9";
-            label9.Size = new Size(94, 21);
+            label9.Size = new Size(120, 28);
             label9.TabIndex = 14;
             label9.Text = "Contact No.:";
             // 
@@ -121,20 +121,22 @@ namespace OrganizationProfile
             btnSubmit.BackColor = SystemColors.ControlLight;
             btnSubmit.FlatStyle = FlatStyle.Flat;
             btnSubmit.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnSubmit.Location = new Point(110, 379);
+            btnSubmit.Location = new Point(126, 505);
+            btnSubmit.Margin = new Padding(3, 4, 3, 4);
             btnSubmit.Name = "btnSubmit";
-            btnSubmit.Size = new Size(140, 28);
+            btnSubmit.Size = new Size(160, 37);
             btnSubmit.TabIndex = 20;
             btnSubmit.Text = "Submit";
             btnSubmit.UseVisualStyleBackColor = false;
+            btnSubmit.Click += btnSubmit_Click;
             // 
             // lblStudentNo
             // 
             lblStudentNo.AutoSize = true;
             lblStudentNo.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblStudentNo.Location = new Point(134, 41);
+            lblStudentNo.Location = new Point(153, 55);
             lblStudentNo.Name = "lblStudentNo";
-            lblStudentNo.Size = new Size(39, 21);
+            lblStudentNo.Size = new Size(48, 28);
             lblStudentNo.TabIndex = 21;
             lblStudentNo.Text = "Null";
             // 
@@ -142,9 +144,9 @@ namespace OrganizationProfile
             // 
             lblName.AutoSize = true;
             lblName.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblName.Location = new Point(134, 84);
+            lblName.Location = new Point(153, 112);
             lblName.Name = "lblName";
-            lblName.Size = new Size(39, 21);
+            lblName.Size = new Size(48, 28);
             lblName.TabIndex = 22;
             lblName.Text = "Null";
             // 
@@ -152,9 +154,9 @@ namespace OrganizationProfile
             // 
             lblProgram.AutoSize = true;
             lblProgram.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblProgram.Location = new Point(134, 125);
+            lblProgram.Location = new Point(153, 167);
             lblProgram.Name = "lblProgram";
-            lblProgram.Size = new Size(39, 21);
+            lblProgram.Size = new Size(48, 28);
             lblProgram.TabIndex = 23;
             lblProgram.Text = "Null";
             // 
@@ -162,9 +164,9 @@ namespace OrganizationProfile
             // 
             lblAge.AutoSize = true;
             lblAge.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblAge.Location = new Point(134, 171);
+            lblAge.Location = new Point(153, 228);
             lblAge.Name = "lblAge";
-            lblAge.Size = new Size(39, 21);
+            lblAge.Size = new Size(48, 28);
             lblAge.TabIndex = 24;
             lblAge.Text = "Null";
             // 
@@ -172,9 +174,9 @@ namespace OrganizationProfile
             // 
             lblBirthday.AutoSize = true;
             lblBirthday.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblBirthday.Location = new Point(134, 216);
+            lblBirthday.Location = new Point(153, 288);
             lblBirthday.Name = "lblBirthday";
-            lblBirthday.Size = new Size(39, 21);
+            lblBirthday.Size = new Size(48, 28);
             lblBirthday.TabIndex = 25;
             lblBirthday.Text = "Null";
             // 
@@ -182,9 +184,9 @@ namespace OrganizationProfile
             // 
             lblGender.AutoSize = true;
             lblGender.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblGender.Location = new Point(134, 262);
+            lblGender.Location = new Point(153, 349);
             lblGender.Name = "lblGender";
-            lblGender.Size = new Size(39, 21);
+            lblGender.Size = new Size(48, 28);
             lblGender.TabIndex = 26;
             lblGender.Text = "Null";
             // 
@@ -192,17 +194,17 @@ namespace OrganizationProfile
             // 
             lblContactNo.AutoSize = true;
             lblContactNo.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblContactNo.Location = new Point(134, 312);
+            lblContactNo.Location = new Point(153, 416);
             lblContactNo.Name = "lblContactNo";
-            lblContactNo.Size = new Size(39, 21);
+            lblContactNo.Size = new Size(48, 28);
             lblContactNo.TabIndex = 27;
             lblContactNo.Text = "Null";
             // 
             // frmConfirmation
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(358, 450);
+            ClientSize = new Size(409, 600);
             Controls.Add(lblContactNo);
             Controls.Add(lblGender);
             Controls.Add(lblBirthday);
@@ -218,6 +220,7 @@ namespace OrganizationProfile
             Controls.Add(label6);
             Controls.Add(label3);
             Controls.Add(label2);
+            Margin = new Padding(3, 4, 3, 4);
             Name = "frmConfirmation";
             Text = "Confirmation";
             Load += frmConfirmation_Load;

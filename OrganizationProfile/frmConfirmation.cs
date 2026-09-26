@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static OrganizationProfile.frmRegistration;
 
 namespace OrganizationProfile
 {
@@ -17,17 +18,21 @@ namespace OrganizationProfile
             InitializeComponent();
         }
 
-        StudentInformationClass studentInfo = new StudentInformationClass();
-
         private void frmConfirmation_Load(object sender, EventArgs e)
         {
-            lblStudentNo.Text = studentInfo.SetStudentNo.ToString();
-            lblName.Text = studentInfo.SetFullName.ToString();
-            lblProgram.Text = studentInfo.SetProgram.ToString();
-            lblBirthday.Text = studentInfo.SetBirthday.ToString();
-            lblGender.Text = studentInfo.SetGender.ToString();
-            lblContactNo.Text = studentInfo.SetContactNo.ToString();
-            lblAge.Text = studentInfo.SetAge.ToString();
+            lblStudentNo.Text = StudentInformationClass.SetStudentNo.ToString();
+            lblName.Text = StudentInformationClass.SetFullName;
+            lblProgram.Text = StudentInformationClass.SetProgram;
+            lblBirthday.Text = StudentInformationClass.SetBirthday;
+            lblGender.Text = StudentInformationClass.SetGender;
+            lblContactNo.Text = StudentInformationClass.SetContactNo;
+            lblAge.Text = StudentInformationClass.SetAge.ToString();
+        }
+
+        private void btnSubmit_Click(object sender, EventArgs e)
+        {
+            this.DialogResult = DialogResult.OK;
+            this.Close();
         }
     }
 }
